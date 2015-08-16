@@ -1,0 +1,75 @@
+﻿<Window x:Class="FormsDataScriptGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:formsDataScriptGenerator="clr-namespace:FormsDataScriptGenerator"
+        Title="MainWindow" Height="519" Width="900">
+    <Grid x:Name="grid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="883*"/>
+        </Grid.ColumnDefinitions>
+        <ListView Margin="2,37,295,37" Grid.Column="1" ItemsSource="{Binding Fields}" x:Name="list" SelectedItem="{Binding SelectedField, Mode=TwoWay}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="Title: " />
+                        <TextBlock Text="{Binding Title}" FontWeight="Bold" />
+                        <TextBlock Text="Key: " />
+                        <TextBlock Text="{Binding Key}" FontWeight="Bold" />
+                        <TextBlock Text="LookupId: " />
+                        <TextBlock Text="{Binding LookupId}" FontWeight="Bold" />
+                        <TextBlock Text="FieldType: " />
+                        <TextBlock Text="{Binding FieldType.Name}" />
+                        <!--Button Content="New" Command="{Binding NewCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"/-->
+                        <!--ComboBox ItemsSource="{Binding Path=FieldTypes}" DisplayMemberPath="Name" SelectedValuePath="Name" SelectedValue="{Binding Path=FieldType}" FontWeight="Bold" /-->
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Content="Generate" Command="{Binding GenerateCommand}" Margin="0,0,13,10" Grid.Column="1" HorizontalAlignment="Right" Width="75" Height="22" VerticalAlignment="Bottom"/>
+        <TextBox Grid.Column="1" DataContext="{Binding SelectedField}" Text="{Binding Path=Title, Mode=TwoWay}" HorizontalAlignment="Left" Height="24" Margin="619,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254"/>
+        <ComboBox ItemsSource="{Binding Path=FieldTypes}" DisplayMemberPath="Name" SelectedValuePath="FieldType" SelectedItem="{Binding Path=SelectedField.FieldType, Mode=TwoWay}" Grid.Column="1" HorizontalAlignment="Left" Margin="619,334,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Title" Grid.Column="1" HorizontalAlignment="Left" Margin="619,123,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.386,0.551"/>
+        <TextBox Grid.Column="1" DataContext="{Binding SelectedField}" Text="{Binding Key, Mode=TwoWay}" HorizontalAlignment="Left" Height="24" Margin="619,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254"/>
+        <Label Content="FormFieldDefinitionKey" Grid.Column="1" HorizontalAlignment="Left" Margin="619,183,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.386,0.551"/>
+        <TextBox Grid.Column="1" DataContext="{Binding SelectedField}" HorizontalAlignment="Left" Height="24" Margin="619,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254">
+            <TextBox.Text>
+                <Binding Path="LookupId" Mode="TwoWay" UpdateSourceTrigger="LostFocus">
+                    <Binding.ValidationRules>
+                        <formsDataScriptGenerator:GuidValidationRule></formsDataScriptGenerator:GuidValidationRule>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <Label Content="LookupTypeId (GUID)" Grid.Column="1" HorizontalAlignment="Left" Margin="619,243,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.386,0.551"/>
+        <Label Content="Field Type" Grid.Column="1" HorizontalAlignment="Left" Margin="619,303,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.386,0.551"/>
+        <Button Content="New" Command="{Binding NewCommand}" Grid.Column="1" HorizontalAlignment="Left" Margin="619,430,0,0" VerticalAlignment="Top" Width="75"/>
+
+        <Label Content="FormDefinitionId (GUID)" Grid.Column="1" HorizontalAlignment="Left" Margin="619,5,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.386,0.551"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="619,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254">
+            <TextBox.Text>
+                <Binding Path="FormID" Mode="TwoWay" UpdateSourceTrigger="LostFocus">
+                    <Binding.ValidationRules>
+                        <formsDataScriptGenerator:GuidValidationRule></formsDataScriptGenerator:GuidValidationRule>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <Label Content="FormFieldDefinitionId (GUID)" Grid.Column="1" HorizontalAlignment="Left" Margin="619,67,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.386,0.551"/>
+        <TextBox Grid.Column="1" DataContext="{Binding SelectedField}" HorizontalAlignment="Left" Height="24" Margin="619,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254">
+            <TextBox.Text>
+                <Binding Path="Id" Mode="TwoWay" UpdateSourceTrigger="LostFocus">
+                    <Binding.ValidationRules>
+                        <formsDataScriptGenerator:GuidValidationRule></formsDataScriptGenerator:GuidValidationRule>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <Button Content="Remove" Grid.Column="1" Command="{Binding RemoveCommand}" HorizontalAlignment="Left" Margin="707,430,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Load" Grid.Column="1" Command="{Binding LoadCommand}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="74"/>
+        <Button Content="Save" Grid.Column="1" Command="{Binding SaveCommand}" HorizontalAlignment="Left" Margin="105,10,0,0" VerticalAlignment="Top" Width="76"/>
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,15 @@
+D:\Projects\FormsDataGenerator\FormsDataScriptGenerator\bin\Debug\FormsDataScriptGenerator.exe.config
+D:\Projects\FormsDataGenerator\FormsDataScriptGenerator\bin\Debug\FormsDataScriptGenerator.exe
+D:\Projects\FormsDataGenerator\FormsDataScriptGenerator\bin\Debug\FormsDataScriptGenerator.pdb
+D:\Projects\FormsDataGenerator\FormsDataScriptGenerator\obj\Debug\FormsDataScriptGenerator.csprojResolveAssemblyReference.cache
+D:\Projects\FormsDataGenerator\FormsDataScriptGenerator\obj\Debug\MainWindow.baml
+D:\Projects\FormsDataGenerator\FormsDataScriptGenerator\obj\Debug\MainWindow.g.cs
+D:\Projects\FormsDataGenerator\FormsDataScriptGenerator\obj\Debug\App.g.cs
+D:\Projects\FormsDataGenerator\FormsDataScriptGenerator\obj\Debug\FormsDataScriptGenerator_MarkupCompile.cache
+D:\Projects\FormsDataGenerator\FormsDataScriptGenerator\obj\Debug\FormsDataScriptGenerator.g.resources
+D:\Projects\FormsDataGenerator\FormsDataScriptGenerator\obj\Debug\FormsDataScriptGenerator.Properties.Resources.resources
+D:\Projects\FormsDataGenerator\FormsDataScriptGenerator\obj\Debug\FormsDataScriptGenerator.csproj.GenerateResource.Cache
+D:\Projects\FormsDataGenerator\FormsDataScriptGenerator\obj\Debug\FormsDataScriptGenerator.exe
+D:\Projects\FormsDataGenerator\FormsDataScriptGenerator\obj\Debug\FormsDataScriptGenerator.pdb
+D:\Projects\FormsDataGenerator\FormsDataScriptGenerator\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Projects\FormsDataGenerator\FormsDataScriptGenerator\obj\Debug\FormsDataScriptGenerator_MarkupCompile.lref
