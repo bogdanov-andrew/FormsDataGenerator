@@ -37,8 +37,8 @@ namespace FormsDataScriptGenerator.Generators
             foreach (FieldItem field in fields)
             {
                 string generatedLine = string.Format(_sqlTemplate, 
-                    field.Id, 
-                    formId, 
+                    FormatGuidFields(field.Id),
+                    FormatGuidFields(formId), 
                     (int)field.FieldType.FieldType, 
                     field.Key, 
                     field.Title,
@@ -53,6 +53,11 @@ namespace FormsDataScriptGenerator.Generators
             }
 
             SaveToFile(stringBuilder);
+        }
+
+        private string FormatGuidFields(Guid guid)
+        {
+            return string.IsNullOrEmpty(guid.ToString()) ? "NULL" : string.Format("'{0}'", guid);
         }
     }
 }

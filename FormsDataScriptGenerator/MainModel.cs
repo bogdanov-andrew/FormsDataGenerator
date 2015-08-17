@@ -143,9 +143,18 @@ namespace FormsDataScriptGenerator
 
         private void OnGenerate(object param)
         {
+            //PrepareFields();
             _sqlGenerator.Generate(Fields.ToList(), FormID);
             _dataSetsGenerator.Generate(Fields.ToList(), FormID);
             _htmlGenerator.Generate(Fields.ToList(),FormID);
+        }
+
+        private void PrepareFields()
+        {
+            foreach (FieldItem field in Fields)
+            {
+                field.Title = field.Title.Replace('’', ' ');
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

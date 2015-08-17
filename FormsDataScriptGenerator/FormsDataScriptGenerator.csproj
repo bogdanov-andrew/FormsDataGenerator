@@ -71,6 +71,7 @@
     <Compile Include="Generators\BaseGenerator.cs" />
     <Compile Include="Generators\HtmlGenerator.cs" />
     <Compile Include="Generators\DataSetsGenerator.cs" />
+    <Compile Include="LengthValidationRule.cs" />
     <Compile Include="LoadSaveProvider.cs" />
     <Compile Include="Providers\FieldsTypeProvider.cs" />
     <Compile Include="GuidValidationRule.cs" />

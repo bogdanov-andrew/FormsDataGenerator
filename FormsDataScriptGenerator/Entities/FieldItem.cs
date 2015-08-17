@@ -13,7 +13,12 @@ namespace FormsDataScriptGenerator.Entities
 
         public string LookupIdFormatted
         {
-            get { return string.IsNullOrEmpty(LookupId) ? "NULL" : LookupId; }
+            get { return string.IsNullOrEmpty(LookupId) ? "NULL" : string.Format("'{0}'",LookupId); }
+        }
+
+        public string IdFormatted
+        {
+            get { return string.IsNullOrEmpty(LookupId) ? "NULL" : string.Format("'{0}'", Id); }
         }
 
         public FieldItem(Guid id, FieldTypeItem fieldType)
